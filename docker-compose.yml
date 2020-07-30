@@ -4,6 +4,6 @@ services:
   nginx-vod-cdn:
     build: .
     volumes:
-      - ./data:/opt/static/replay
+      - ./data:/opt/static/hls/replay
     ports:
       - 8081:80
