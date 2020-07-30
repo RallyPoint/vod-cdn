@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  nginx-vod-cdn:
+    build: .
+    volumes:
+      - ./data:/opt/static/replay
+    ports:
+      - 8081:80
