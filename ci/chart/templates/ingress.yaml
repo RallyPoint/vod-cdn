@@ -9,13 +9,23 @@ metadata:
 spec:
   tls:
     - hosts:
-        - movie.rallypoint.tech
-      secretName: movie-encoder-tls
+        - vod.rallypoint.tech
+      secretName: vod-encoder-tls
+    - hosts:
+        - live.rallypoint.tech
+      secretName: live-encoder-tls
   rules:
-    - host: movie.rallypoint.tech
+    - host: vod.rallypoint.tech
       http:
         paths:
           - path: /
             backend:
               serviceName: {{ template "fullname" . }}-clusteip
               servicePort: 80
+      - host: live.rallypoint.tech
+        http:
+         paths:
+           - path: /
+             backend:
+               serviceName: {{ template "fullname" . }}-clusteip
+               servicePort: 80
