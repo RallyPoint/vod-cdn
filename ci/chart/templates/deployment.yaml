@@ -30,3 +30,19 @@ spec:
         - name: media-volume
           persistentVolumeClaim:
             claimName: 'media-pvc'
+        - name: secret-volume
+          secret:
+            secretName: back-config
+              volumeMounts:
+                - name: secret-volume
+                  mountPath: /usr/local/nginx/ssl
+                  readOnly: true
+                - mountPath: /media
+                  name: media-volume
+            volumes:
+              - name: secret-volume
+                secret:
+                  secretName: vod-live-ssl
+              - name: media-volume
+                persistentVolumeClaim:
+                  claimName: 'media-pvc'
