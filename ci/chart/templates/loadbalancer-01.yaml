@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "fullname" . }}01
   labels:
-    app: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}01
 spec:
   selector:
     app: {{ .Chart.Name }}

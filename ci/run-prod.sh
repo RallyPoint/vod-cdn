@@ -1,5 +1,4 @@
-#!/bin/bash
-
-envsubst "$(env | sed -e 's/=.*//' -e 's/^/\$/g')" < \
-  /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && \
-  nginx
+#!/bin/sh
+echo "==============================="
+/etc/letsencrypt/init-letsencrypt.sh
+/usr/local/nginx/sbin/nginx
