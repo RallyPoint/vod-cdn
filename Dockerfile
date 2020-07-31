@@ -12,5 +12,5 @@ RUN mkdir -p /usr/local/nginx/ssl
 ADD /ci/run-prod.sh /root/run-prod.sh
 RUN chmod +x /root/run-prod.sh
 
-ENTRYPOINT ["/bin/sh"]
-CMD ["/root/run-prod.sh"]
+ENTRYPOINT ["/usr/local/nginx/sbin/nginx"]
+CMD ["-g", "daemon off;"]
