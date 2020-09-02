@@ -35,4 +35,4 @@ spec:
             secretName: vod-live-ssl
         - name: media-volume
           persistentVolumeClaim:
-            claimName: 'media-pvc'
+            claimName: 'media-nfs-pvc'
